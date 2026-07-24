@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gestor-cron-comandos"
+version = "0.1.0"
+description = "GUI para crear tareas programadas (cron/systemd) y comandos de shell personalizados en cualquier Linux"
+requires-python = ">=3.10"
+dependencies = [
+    "PySide6>=6.8",
+    "python-crontab>=3.0",
+]
+
+[project.scripts]
+gestor-cron-comandos = "gestorcron.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gestorcron = ["recursos/*.svg"]
